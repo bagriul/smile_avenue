@@ -3,209 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smile Avenue Dental Clinic</title>
+    <title>Smile Avenue - Опитування</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f0d6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-        .container {
-            width: 90%;
-            max-width: 600px;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
 
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+.logo img {
+    width: 300px;
+    height: auto;
+}
 
-        .logo img {
-            width: 100%;
-            max-width: 200px; /* Оптимізація для мобільних пристроїв */
-        }
+.logo h1 {
+    font-size: 28px;
+    margin: 10px 0 0;
+}
 
-        h1 {
-            font-size: 24px;
-            text-align: center;
-            color: #333;
-        }
+.logo h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #666;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+.survey-form {
+    margin-top: 30px;
+}
 
-        .question {
-            margin-bottom: 15px;
-        }
+.question {
+    margin-bottom: 20px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+.question label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
 
-        .options {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap; /* Дозволяє варіантам переноситися на новий рядок */
-        }
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .options label {
-            font-weight: normal;
-        }
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
 
-        .text-area {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            resize: none; /* Забороняє змінювати розмір поля */
-        }
+.submit-btn button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-        .submit-btn {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: background-color 0.3s ease; /* Плавний перехід */
-        }
+.submit-btn button:hover {
+    background-color: #45a049;
+}
 
-        .submit-btn:hover {
-            background-color: #555;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                width: 100%;
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 20px; /* Зменшення розміру заголовка */
-            }
-
-            .submit-btn {
-                font-size: 14px; /* Зменшення розміру кнопки */
-            }
-        }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="logo">
-            <img src="https://framerusercontent.com/assets/x7tzslQfq7vmnnqL02fHNgAdjI.jpg" alt="Smile Avenue Dental Clinic">
+            <img src="logo_sa.png" alt="Smile Avenue Logo">
         </div>
-        <h1>Ваш відгук</h1>
-        <form id="feedbackForm">
+
+        <form class="survey-form">
             <div class="question">
-                <label for="doctor">Чи задоволені Ви роботою лікаря?</label>
+                <label>Чи задоволені Ви роботою лікаря?</label>
                 <div class="options">
-                    <label><input type="radio" name="doctor" value="Так" required> Так</label>
-                    <label><input type="radio" name="doctor" value="Ні" required> Ні</label>
+                    <input type="radio" id="doctor_yes" name="doctor" value="yes">
+                    <label for="doctor_yes">Так</label>
+
+                    <input type="radio" id="doctor_no" name="doctor" value="no">
+                    <label for="doctor_no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
-                <label for="assistant">Чи задоволені Ви роботою асистента?</label>
+                <label>Чи задоволені Ви роботою асистента?</label>
                 <div class="options">
-                    <label><input type="radio" name="assistant" value="Так" required> Так</label>
-                    <label><input type="radio" name="assistant" value="Ні" required> Ні</label>
+                    <input type="radio" id="assistant_yes" name="assistant" value="yes">
+                    <label for="assistant_yes">Так</label>
+
+                    <input type="radio" id="assistant_no" name="assistant" value="no">
+                    <label for="assistant_no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
-                <label for="admin">Чи задоволені Ви роботою адміністратора?</label>
+                <label>Чи задоволені Ви роботою адміністратора?</label>
                 <div class="options">
-                    <label><input type="radio" name="admin" value="Так" required> Так</label>
-                    <label><input type="radio" name="admin" value="Ні" required> Ні</label>
+                    <input type="radio" id="admin_yes" name="admin" value="yes">
+                    <label for="admin_yes">Так</label>
+
+                    <input type="radio" id="admin_no" name="admin" value="no">
+                    <label for="admin_no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
-                <label for="service">Чи задоволені Ви сервісом?</label>
+                <label>Чи задоволені Ви сервісом?</label>
                 <div class="options">
-                    <label><input type="radio" name="service" value="Так" required> Так</label>
-                    <label><input type="radio" name="service" value="Ні" required> Ні</label>
+                    <input type="radio" id="service_yes" name="service" value="yes">
+                    <label for="service_yes">Так</label>
+
+                    <input type="radio" id="service_no" name="service" value="no">
+                    <label for="service_no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
-                <label for="advice">Чи хотіли б нам щось порадити, щоб ми стали кращими для Вас?</label>
-                <textarea id="advice" class="text-area" rows="4" placeholder="Ваші поради..." required></textarea>
+                <label>Чи хотіли б нам щось порадити, щоб ми стали кращими для Вас?</label>
+                <textarea name="advice" rows="4" placeholder="Ваші поради..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Надіслати</button>
+            <div class="submit-btn">
+                <button type="submit">Відправити</button>
+            </div>
         </form>
     </div>
-
-    <script>
-        const token = '7517034148:AAGKP5Xm40-GfTDdMml2jjtQBab74DMRNKU'; // Замінити на ваш токен бота
-        const chat_id = '-1002301135168'; // Замінити на ID чату або каналу
-
-        document.getElementById('feedbackForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const doctor = document.querySelector('input[name="doctor"]:checked').value;
-            const assistant = document.querySelector('input[name="assistant"]:checked').value;
-            const admin = document.querySelector('input[name="admin"]:checked').value;
-            const service = document.querySelector('input[name="service"]:checked').value;
-            const advice = document.getElementById('advice').value;
-
-            const message = `
-🦷 *Відгук від клієнта:*
-- Чи задоволені Ви роботою лікаря? ${doctor}
-- Чи задоволені Ви роботою асистента? ${assistant}
-- Чи задоволені Ви роботою адміністратора? ${admin}
-- Чи задоволені Ви сервісом? ${service}
-- Поради клієнта: ${advice}
-            `;
-
-            fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: chat_id,
-                    text: message,
-                    parse_mode: 'Markdown'
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
-                    alert('Ваш відгук успішно надіслано!');
-                } else {
-                    alert('Помилка при надсиланні відгуку. Спробуйте ще раз.');
-                }
-            })
-            .catch(error => {
-                alert('Сталася помилка. Спробуйте ще раз.');
-                console.error('Помилка:', error);
-            });
-        });
-    </script>
-
 </body>
 </html>
