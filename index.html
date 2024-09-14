@@ -33,7 +33,8 @@
         }
 
         .logo img {
-            width: 300px;
+            width: 100%;
+            max-width: 200px; /* Оптимізація для мобільних пристроїв */
         }
 
         h1 {
@@ -60,6 +61,7 @@
         .options {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap; /* Дозволяє варіантам переноситися на новий рядок */
         }
 
         .options label {
@@ -85,6 +87,7 @@
             cursor: pointer;
             font-size: 16px;
             margin-top: 15px;
+            transition: background-color 0.3s ease; /* Плавний перехід */
         }
 
         .submit-btn:hover {
@@ -95,6 +98,14 @@
             .container {
                 width: 100%;
                 padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px; /* Зменшення розміру заголовка */
+            }
+
+            .submit-btn {
+                font-size: 14px; /* Зменшення розміру кнопки */
             }
         }
     </style>
