@@ -87,7 +87,7 @@ textarea {
             <img src="logo_sa.png" alt="Smile Avenue Logo">
         </div>
 
-        <form class="survey-form">
+        <form id="feedbackForm" class="survey-form">
             <div class="question">
                 <label>Чи задоволені Ви роботою лікаря?</label>
                 <div class="options">
@@ -142,5 +142,53 @@ textarea {
             </div>
         </form>
     </div>
+
+    <script>
+        const token = '7517034148:AAGKP5Xm40-GfTDdMml2jjtQBab74DMRNKU'; // Замінити на ваш токен бота
+        const chat_id = '-1002301135168'; // Замінити на ID чату або каналу
+
+        document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const doctor = document.querySelector('input[name="doctor"]:checked').value;
+            const assistant = document.querySelector('input[name="assistant"]:checked').value;
+            const admin = document.querySelector('input[name="admin"]:checked').value;
+            const service = document.querySelector('input[name="service"]:checked').value;
+            const advice = document.getElementsByName('advice').value;
+
+            const message = `
+🦷 *Відгук від клієнта:*
+- Чи задоволені Ви роботою лікаря? ${doctor}
+- Чи задоволені Ви роботою асистента? ${assistant}
+- Чи задоволені Ви роботою адміністратора? ${admin}
+- Чи задоволені Ви сервісом? ${service}
+- Поради клієнта: ${advice}
+            `;
+
+            fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chat_id,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Ваш відгук успішно надіслано!');
+                } else {
+                    alert('Помилка при надсиланні відгуку. Спробуйте ще раз.');
+                }
+            })
+            .catch(error => {
+                alert('Сталася помилка. Спробуйте ще раз.');
+                console.error('Помилка:', error);
+            });
+        });
+    </script>
 </body>
 </html>
