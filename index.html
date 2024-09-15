@@ -3,132 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smile Avenue - Опитування</title>
+    <title>Smile Avenue</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5dc;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-.container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
 
-.logo img {
-    width: 300px;
-    height: auto;
-}
+        .logo img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-.logo h1 {
-    font-size: 28px;
-    margin: 10px 0 0;
-}
+        .logo h1 {
+            font-size: 32px;
+            margin: 10px 0;
+            color: #333;
+        }
 
-.logo h2 {
-    font-size: 18px;
-    margin: 0;
-    color: #666;
-}
+        .logo h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #777;
+        }
 
-.survey-form {
-    margin-top: 30px;
-}
+        .survey-form {
+            margin-top: 30px;
+        }
 
-.question {
-    margin-bottom: 20px;
-}
+        .question {
+            margin-bottom: 25px;
+        }
 
-.question label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+        .question label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
 
-.options {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
 
-textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
+        input[type="radio"] {
+            margin-right: 10px;
+        }
 
-.submit-btn button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
 
-.submit-btn button:hover {
-    background-color: #45a049;
-}
+        textarea:focus {
+            border-color: #3f51b5;
+            outline: none;
+        }
 
+        .submit-btn {
+            margin-top: 30px;
+        }
+
+        .submit-btn button {
+            padding: 12px 24px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn button:hover {
+            background-color: #32408f;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn button:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">
             <img src="logo_sa.png" alt="Smile Avenue Logo">
+            <h1>Smile Avenue</h1>
         </div>
 
         <form id="feedbackForm" class="survey-form">
             <div class="question">
                 <label>Чи задоволені Ви роботою лікаря?</label>
                 <div class="options">
-                    <input type="radio" id="doctor_yes" name="doctor" value="yes">
-                    <label for="doctor_yes">Так</label>
-
-                    <input type="radio" id="doctor_no" name="doctor" value="no">
-                    <label for="doctor_no">Ні</label>
+                    <label><input type="radio" id="doctor_yes" name="doctor" value="yes">Так</label>
+                    <label><input type="radio" id="doctor_no" name="doctor" value="no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
                 <label>Чи задоволені Ви роботою асистента?</label>
                 <div class="options">
-                    <input type="radio" id="assistant_yes" name="assistant" value="yes">
-                    <label for="assistant_yes">Так</label>
-
-                    <input type="radio" id="assistant_no" name="assistant" value="no">
-                    <label for="assistant_no">Ні</label>
+                    <label><input type="radio" id="assistant_yes" name="assistant" value="yes">Так</label>
+                    <label><input type="radio" id="assistant_no" name="assistant" value="no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
                 <label>Чи задоволені Ви роботою адміністратора?</label>
                 <div class="options">
-                    <input type="radio" id="admin_yes" name="admin" value="yes">
-                    <label for="admin_yes">Так</label>
-
-                    <input type="radio" id="admin_no" name="admin" value="no">
-                    <label for="admin_no">Ні</label>
+                    <label><input type="radio" id="admin_yes" name="admin" value="yes">Так</label>
+                    <label><input type="radio" id="admin_no" name="admin" value="no">Ні</label>
                 </div>
             </div>
 
             <div class="question">
                 <label>Чи задоволені Ви сервісом?</label>
                 <div class="options">
-                    <input type="radio" id="service_yes" name="service" value="yes">
-                    <label for="service_yes">Так</label>
-
-                    <input type="radio" id="service_no" name="service" value="no">
-                    <label for="service_no">Ні</label>
+                    <label><input type="radio" id="service_yes" name="service" value="yes">Так</label>
+                    <label><input type="radio" id="service_no" name="service" value="no">Ні</label>
                 </div>
             </div>
 
@@ -154,7 +169,7 @@ textarea {
             const assistant = document.querySelector('input[name="assistant"]:checked').value;
             const admin = document.querySelector('input[name="admin"]:checked').value;
             const service = document.querySelector('input[name="service"]:checked').value;
-            const advice = document.getElementsByName('advice').value;
+            const advice = document.querySelector('textarea[name="advice"]').value;
 
             const message = `
 🦷 *Відгук від клієнта:*
