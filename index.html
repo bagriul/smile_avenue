@@ -61,7 +61,7 @@
         .options {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
         }
 
         input[type="radio"] {
@@ -134,34 +134,46 @@
 
         <form id="feedbackForm" class="survey-form">
             <div class="question">
-                <label>Чи задоволені Ви роботою лікаря?</label>
+                <label>Оцініть роботу лікаря (1 - незадоволений, 5 - повністю задоволений)</label>
                 <div class="options">
-                    <label><input type="radio" id="doctor_yes" name="doctor" value="yes">Так</label>
-                    <label><input type="radio" id="doctor_no" name="doctor" value="no">Ні</label>
+                    <label><input type="radio" name="doctor" value="1">1</label>
+                    <label><input type="radio" name="doctor" value="2">2</label>
+                    <label><input type="radio" name="doctor" value="3">3</label>
+                    <label><input type="radio" name="doctor" value="4">4</label>
+                    <label><input type="radio" name="doctor" value="5">5</label>
                 </div>
             </div>
 
             <div class="question">
-                <label>Чи задоволені Ви роботою асистента?</label>
+                <label>Оцініть роботу асистента (1 - незадоволений, 5 - повністю задоволений)</label>
                 <div class="options">
-                    <label><input type="radio" id="assistant_yes" name="assistant" value="yes">Так</label>
-                    <label><input type="radio" id="assistant_no" name="assistant" value="no">Ні</label>
+                    <label><input type="radio" name="assistant" value="1">1</label>
+                    <label><input type="radio" name="assistant" value="2">2</label>
+                    <label><input type="radio" name="assistant" value="3">3</label>
+                    <label><input type="radio" name="assistant" value="4">4</label>
+                    <label><input type="radio" name="assistant" value="5">5</label>
                 </div>
             </div>
 
             <div class="question">
-                <label>Чи задоволені Ви роботою адміністратора?</label>
+                <label>Оцініть роботу адміністратора (1 - незадоволений, 5 - повністю задоволений)</label>
                 <div class="options">
-                    <label><input type="radio" id="admin_yes" name="admin" value="yes">Так</label>
-                    <label><input type="radio" id="admin_no" name="admin" value="no">Ні</label>
+                    <label><input type="radio" name="admin" value="1">1</label>
+                    <label><input type="radio" name="admin" value="2">2</label>
+                    <label><input type="radio" name="admin" value="3">3</label>
+                    <label><input type="radio" name="admin" value="4">4</label>
+                    <label><input type="radio" name="admin" value="5">5</label>
                 </div>
             </div>
 
             <div class="question">
-                <label>Чи задоволені Ви сервісом?</label>
+                <label>Оцініть сервіс (1 - незадоволений, 5 - повністю задоволений)</label>
                 <div class="options">
-                    <label><input type="radio" id="service_yes" name="service" value="yes">Так</label>
-                    <label><input type="radio" id="service_no" name="service" value="no">Ні</label>
+                    <label><input type="radio" name="service" value="1">1</label>
+                    <label><input type="radio" name="service" value="2">2</label>
+                    <label><input type="radio" name="service" value="3">3</label>
+                    <label><input type="radio" name="service" value="4">4</label>
+                    <label><input type="radio" name="service" value="5">5</label>
                 </div>
             </div>
 
@@ -195,10 +207,10 @@
 
             const message = `
 🦷 *Відгук від клієнта:*
-- Чи задоволені Ви роботою лікаря? ${doctor}
-- Чи задоволені Ви роботою асистента? ${assistant}
-- Чи задоволені Ви роботою адміністратора? ${admin}
-- Чи задоволені Ви сервісом? ${service}
+- Оцінка роботи лікаря: ${doctor}
+- Оцінка роботи асистента: ${assistant}
+- Оцінка роботи адміністратора: ${admin}
+- Оцінка сервісу: ${service}
 - Поради клієнта: ${advice}
             `;
 
