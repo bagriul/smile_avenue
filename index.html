@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,8 +106,24 @@
         .submit-btn button:active {
             transform: scale(0.98);
         }
+
+        textarea {
+            width: 100%;
+            /* Make it full width within its container */
+            max-width: 100%;
+            /* Prevent it from exceeding the container width */
+            padding: 10px;
+            /* Add some padding for better readability */
+            box-sizing: border-box;
+            /* Include padding and borders in the element's width */
+            font-size: 1em;
+            /* Ensure the text size is consistent */
+            resize: vertical;
+            /* Allow vertical resizing, but prevent horizontal resizing */
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="logo">
@@ -191,19 +208,20 @@
                     parse_mode: 'Markdown'
                 })
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
-                    alert('Ваш відгук успішно надіслано!');
-                } else {
-                    alert('Помилка при надсиланні відгуку. Спробуйте ще раз.');
-                }
-            })
-            .catch(error => {
-                alert('Сталася помилка. Спробуйте ще раз.');
-                console.error('Помилка:', error);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('Ваш відгук успішно надіслано!');
+                    } else {
+                        alert('Помилка при надсиланні відгуку. Спробуйте ще раз.');
+                    }
+                })
+                .catch(error => {
+                    alert('Сталася помилка. Спробуйте ще раз.');
+                    console.error('Помилка:', error);
+                });
         });
     </script>
 </body>
+
 </html>
